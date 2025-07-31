@@ -1,0 +1,104 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}/Users/ducthanh/Desktop/Spring25/EC223/EC223 Stata session #2.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}23 Mar 2025, 23:20:49
+{txt}
+{com}. 
+. * Bring the data in
+. 
+. use "/Users/ducthanh/Desktop/Spring25/EC223/ObesityData_StataSession_#2.dta"
+{txt}
+{com}. 
+. * Describe obesity percentage 2013
+. 
+. //describe PCT_OBESE_ADULTS13
+. 
+. 
+. * Summary table for PCT_OBESE_ADULTS13
+. //sum PCT_OBESE_ADULTS13
+. 
+. * Summary table for PCT_OBESE_ADULTS13 (more details)
+. //sum PCT_OBESE_ADULTS13, d
+. 
+. * Print only the stats I care about
+. 
+. //tabstat PCT_OBESE_ADULTS13, stat(mean sd min max sk k med)
+. 
+. * Box plot 
+. 
+. //graph box PCT_OBESE_ADULTS13
+. 
+. * Histogram 
+. //histogram PCT_OBESE_ADULTS13, bin(20) normal xtitle("Percentage Obese 2013") title("Histogram For Obesity 2013")
+. 
+. * QQ plot
+. 
+. //qnorm PCT_OBESE_ADULTS13
+. 
+. * List counties with more than 99th percentile obesity
+. 
+. list County if PCT_OBESE_ADULTS13 > 42
+{txt}
+      {c TLC}{hline 17}{c TRC}
+      {c |} {res}         County {txt}{c |}
+      {c LT}{hline 17}{c RT}
+   3. {c |} {res}       Barbour  {txt}{c |}
+   6. {c |} {res}       Bullock  {txt}{c |}
+  32. {c |} {res}        Greene  {txt}{c |}
+  43. {c |} {res}       Lowndes  {txt}{c |}
+  44. {c |} {res}         Macon  {txt}{c |}
+      {c LT}{hline 17}{c RT}
+  53. {c |} {res}         Perry  {txt}{c |}
+  66. {c |} {res}        Wilcox  {txt}{c |}
+ 113. {c |} {res}        Ashley  {txt}{c |}
+ 120. {c |} {res}        Chicot  {txt}{c |}
+ 165. {c |} {res}      Phillips  {txt}{c |}
+      {c LT}{hline 17}{c RT}
+ 173. {c |} {res}   St. Francis  {txt}{c |}
+1057. {c |} {res}      Lawrence  {txt}{c |}
+1059. {c |} {res}        Leslie  {txt}{c |}
+1131. {c |} {res}  East Carroll  {txt}{c |}
+1132. {c |} {res}East Feliciana  {txt}{c |}
+      {c LT}{hline 17}{c RT}
+1212. {c |} {res}      Somerset  {txt}{c |}
+1404. {c |} {res}         Amite  {txt}{c |}
+1412. {c |} {res}     Claiborne  {txt}{c |}
+1415. {c |} {res}       Coahoma  {txt}{c |}
+1427. {c |} {res}        Holmes  {txt}{c |}
+      {c LT}{hline 17}{c RT}
+1433. {c |} {res}     Jefferson  {txt}{c |}
+1443. {c |} {res}       Leflore  {txt}{c |}
+1468. {c |} {res}     Sunflower  {txt}{c |}
+2330. {c |} {res}     Clarendon  {txt}{c |}
+2347. {c |} {res}           Lee  {txt}{c |}
+      {c LT}{hline 17}{c RT}
+2361. {c |} {res}  Williamsburg  {txt}{c |}
+2418. {c |} {res}       Sanborn  {txt}{c |}
+2917. {c |} {res}   Bristol city {txt}{c |}
+3017. {c |} {res}        Marion  {txt}{c |}
+3088. {c |} {res}     Milwaukee  {txt}{c |}
+      {c BLC}{hline 17}{c BRC}
+
+{com}. 
+. 
+. tabstat PCT_OBESE_ADULTS13, stat(mean med)
+
+{txt}{ralign 12:Variable} {...}
+{c |}      Mean       p50
+{hline 13}{c +}{hline 20}
+{ralign 12:PCT_OBESE~13} {...}
+{c |}{...}
+ {res} 31.01709      31.2
+{txt}{hline 13}{c BT}{hline 20}
+
+{com}. * Close the log file
+. log close
+      {txt}name:  {res}<unnamed>
+       {txt}log:  {res}/Users/ducthanh/Desktop/Spring25/EC223/EC223 Stata session #2.smcl
+  {txt}log type:  {res}smcl
+ {txt}closed on:  {res}23 Mar 2025, 23:20:49
+{txt}{.-}
+{smcl}
+{txt}{sf}{ul off}
